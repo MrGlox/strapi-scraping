@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "site_generators",
+  "info": {
+    "singularName": "site-generator",
+    "pluralName": "site-generators",
+    "displayName": "Site generator",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "templates": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "integer"
+    },
+    "forks": {
+      "type": "integer"
+    },
+    "issues": {
+      "type": "integer"
+    },
+    "deploy_link": {
+      "type": "string"
+    },
+    "scraper": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::scraper.scraper",
+      "inversedBy": "site_generators"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scrapers",
+  "info": {
+    "singularName": "scraper",
+    "pluralName": "scrapers",
+    "displayName": "Scraper"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "error": {
+      "type": "json"
+    },
+    "report": {
+      "type": "json"
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "next_execution_at": {
+      "type": "string"
+    },
+    "site_generators": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::site-generator.site-generator",
+      "mappedBy": "scraper"
+    }
+  }
+}
